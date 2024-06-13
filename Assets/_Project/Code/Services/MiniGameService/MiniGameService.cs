@@ -30,9 +30,9 @@ namespace _Project.Code.Services.MiniGameService
         {
             ChangeUI();
             int missedCircles = _circleSpawner.MissedCircles;
-
-            if (missedCircles > _config.CountToWin)
-            {
+            
+            if (missedCircles < _config.CountToWin)
+            {                
                 _youWasRobbedLabel.Show();
                 _player.Health.ApplyDamage(missedCircles * _config.DamagePercent);
             }
